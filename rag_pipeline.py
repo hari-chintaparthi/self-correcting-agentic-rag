@@ -4,7 +4,7 @@ from typing_extensions import TypedDict
 from langgraph.graph import StateGraph, END
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pypdf
@@ -27,10 +27,7 @@ class AgentState(TypedDict):
     loop_count: int
 
 # Initialize models
-embeddings = HuggingFaceInferenceAPIEmbeddings(
-    api_key=os.getenv("HF_API_KEY"),
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+embeddings = FastEmbedEmbeddings(model_name="BAAI/bge-small-en-v1.5")
 llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 
 

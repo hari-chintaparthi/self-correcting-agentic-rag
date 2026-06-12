@@ -13,3 +13,5 @@ streamlit
 langchain-groq
 pypdf
 docx2txt
+faiss-cpu
+fastembed 
