@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-openai
+langgraph
+semantic-router
+pinecone-client
+pydantic
+python-dotenv
+arize-phoenix
+streamlit
+langchain-groq
+pypdf
+docx2txt
